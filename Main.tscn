@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://btrytctic18gw"]
+[gd_scene load_steps=3 format=3 uid="uid://btrytctic18gw"]
 
 [ext_resource type="Script" uid="uid://pdwe7c1tph8d" path="res://motorcycle.gd" id="1_glv2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(64, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
-size = Vector2(2447.25, 84)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_glv2v"]
 
 [node name="Main" type="Node2D"]
 
@@ -40,14 +35,13 @@ position = Vector2(1, 17)
 [node name="WheelJoint" type="PinJoint2D" parent="Motorcycle/FrontWheel"]
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(-6, 501)
+position = Vector2(-4, 534)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(52, -225)
-shape = SubResource("RectangleShape2D_glv2v")
-debug_color = Color(0.547314, 0.440154, 0.910987, 0.42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(-30, -7)
+polygon = PackedVector2Array(-534, -289, -417, -349, -325, -314, -274, -330, -240, -335, -208, -321, -191, -314, -168, -303, -155, -298, -127, -296, -97, -303, -53, -326, -21, -344, 18, -356, 57, -360, 71, -362, 105, -346, 135, -339, 161, -328, 177, -321, 218, -307, 250, -305, 292, -305, 303, -305, 324, -307, 363, -314, 405, -314, 416, -314, 490, -303, 501, -300, 563, -291, 593, -284)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-position = Vector2(54, -225)
-scale = Vector2(2441, 82)
-texture = SubResource("PlaceholderTexture2D_glv2v")
+[node name="Polygon2D" type="Polygon2D" parent="Ground"]
+position = Vector2(-29, -7)
+color = Color(0.0028397, 0.330324, 0.124637, 1)
+polygon = PackedVector2Array(-534, -289, -417, -349, -325, -314, -274, -330, -240, -335, -208, -321, -191, -314, -168, -303, -155, -298, -127, -296, -97, -303, -53, -326, -21, -344, 18, -356, 57, -360, 71, -362, 105, -346, 135, -339, 161, -328, 177, -321, 218, -307, 250, -305, 292, -305, 303, -305, 324, -307, 363, -314, 405, -314, 416, -314, 490, -303, 501, -300, 563, -291, 593, -284)
