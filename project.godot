@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="bike-godot"
+run/main_scene="uid://btrytctic18gw"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/GameManager.gd"
 
 [rendering]
 

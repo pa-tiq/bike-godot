@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://btrytctic18gw"]
+
+[ext_resource type="Script" uid="uid://pdwe7c1tph8d" path="res://motorcycle.gd" id="1_glv2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
+size = Vector2(2447.25, 84)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_glv2v"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Motorcycle" type="CharacterBody2D" parent="."]
+script = ExtResource("1_glv2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Motorcycle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Motorcycle"]
+shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="Camera2D" type="Camera2D" parent="Motorcycle"]
+position = Vector2(1, 17)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-6, 501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(52, -225)
+shape = SubResource("RectangleShape2D_glv2v")
+debug_color = Color(0.547314, 0.440154, 0.910987, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(54, -225)
+scale = Vector2(2441, 82)
+texture = SubResource("PlaceholderTexture2D_glv2v")
