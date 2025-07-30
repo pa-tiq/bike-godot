@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pdwe7c1tph8d" path="res://motorcycle.gd" id="1_glv2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(64, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
 size = Vector2(2447.25, 84)
@@ -11,7 +12,7 @@ size = Vector2(2447.25, 84)
 
 [node name="Main" type="Node2D"]
 
-[node name="Motorcycle" type="CharacterBody2D" parent="."]
+[node name="Motorcycle" type="RigidBody2D" parent="."]
 script = ExtResource("1_glv2v")
 
 [node name="Sprite2D" type="Sprite2D" parent="Motorcycle"]
@@ -21,6 +22,22 @@ shape = SubResource("RectangleShape2D_uu6xs")
 
 [node name="Camera2D" type="Camera2D" parent="Motorcycle"]
 position = Vector2(1, 17)
+
+[node name="BackWheel" type="RigidBody2D" parent="Motorcycle"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Motorcycle/BackWheel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Motorcycle/BackWheel"]
+
+[node name="WheelJoint" type="PinJoint2D" parent="Motorcycle/BackWheel"]
+
+[node name="FrontWheel" type="RigidBody2D" parent="Motorcycle"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Motorcycle/FrontWheel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Motorcycle/FrontWheel"]
+
+[node name="WheelJoint" type="PinJoint2D" parent="Motorcycle/FrontWheel"]
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(-6, 501)
